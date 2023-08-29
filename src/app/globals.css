@@ -2,34 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: TWKLausanne;
-  font-style: normal;
-  font-weight: 300;
-  src: url('/fonts/TWKLausanne/TWKLausanne-300.woff') format('woff');
-}
-
-@font-face {
-  font-family: TWKLausanne;
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/TWKLausanne/TWKLausanne-400.woff') format('woff');
-}
-
-@font-face {
-  font-family: TWKLausanne;
-  font-style: normal;
-  font-weight: 500;
-  src: url('/fonts/TWKLausanne/TWKLausanne-500.woff') format('woff');
-}
-
-@font-face {
-  font-family: TWKLausanne;
-  font-style: normal;
-  font-weight: 600;
-  src: url('/fonts/TWKLausanne/TWKLausanne-600.woff') format('woff');
-}
-
 @layer base {
   :root {
     --base: #000000;
@@ -93,7 +65,7 @@
     }
     body {
       @apply bg-background text-foreground;
-      font-family: TWKLausanne, system-ui, sans-serif;
+      font-family: system-ui, sans-serif;
       background-image: url('/images/background.png');
       background-position: center;
       background-repeat: no-repeat;
@@ -105,9 +77,6 @@
 @layer components {
   .tooltip {
     @apply z-50 transition ease-in-out w-max max-w-[100vw-10px] backdrop-blur-md border box-border text-gray-200 bg-gray-950 border-slate-100/20 rounded-md px-2.5 py-1 space-y-1 text-xs font-medium shadow-md shadow-black/5 ring-1 ring-black/5;
-  }
-  .lausanne {
-    @apply font-lausanne;
   }
 
   html {
