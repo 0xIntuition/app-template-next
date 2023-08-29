@@ -9,8 +9,8 @@ export default function Header() {
         <Link href="/">
           <IntuitionLogotype />
         </Link>
-        <p className="rounded-md px-3 py-2 font-mono text-sm cursor-default border border-primary-700 bg-gray-100/5 backdrop-blur-sm">
-          Get started by editing <span className="font-bold">src/app/page.tsx</span>
+        <p className="rounded-md px-3 py-2 font-mono text-sm cursor-default border border-stone-400/50 bg-gray-50/5 backdrop-blur-sm">
+          Get started by editing <span className="font-bold text-success-500">src/app/page.tsx</span>
         </p>
       </div>
       <div className="flex flex-row items-center mt-4 max-lg:justify-center">

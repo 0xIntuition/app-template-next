@@ -23,10 +23,10 @@ export const ResourceCard = ({ title, description, href }: ResourceCardProps) =>
     <Link href={href}>
       <Card>
         <CardHeader className="pb-0">
-          <h2 className={`mb-3 text-2xl font-semibold`}>{title}</h2>
+          <h2 className={`mb-3 text-xl font-medium text-stone-100 tracking-wider`}>{title}</h2>
         </CardHeader>
         <CardContent>
-          <p className={`m-0 max-w-[30ch] text-sm`}>{description}</p>
+          <p className={`m-0 max-w-[30ch] text-sm text-stone-400 font-light`}>{description}</p>
         </CardContent>
       </Card>
     </Link>
