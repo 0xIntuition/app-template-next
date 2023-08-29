@@ -21,12 +21,12 @@ export type ResourceCardProps = {
 export const ResourceCard = ({ title, description, href }: ResourceCardProps) => {
   return (
     <Link href={href}>
-      <Card>
+      <Card className="group">
         <CardHeader className="pb-0">
-          <h2 className={`mb-3 text-xl font-medium text-stone-100 tracking-wider`}>{title}</h2>
+          <h2 className={`mb-3 text-xl font-medium text-stone-200 group-hover:text-stone-50 tracking-wider`}>{title}</h2>
         </CardHeader>
         <CardContent>
-          <p className={`m-0 max-w-[30ch] text-sm text-stone-400 font-light`}>{description}</p>
+          <p className={`transition-colors duration-75 m-0 max-w-[30ch] text-sm text-stone-400 group-hover:text-stone-200 font-light`}>{description}</p>
         </CardContent>
       </Card>
     </Link>

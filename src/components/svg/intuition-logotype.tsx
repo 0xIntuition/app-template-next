@@ -1,6 +1,13 @@
-export default function Logo() {
-  return (
-    <svg viewBox="0 0 311 76" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 md:h-10">
+import { cn } from "@/lib/utils"
+import React from "react"
+
+const IntuitionLogotype = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
+    <svg viewBox="0 0 311 76" fill="none" xmlns="http://www.w3.org/2000/svg"
+    className={cn(
+      'h-6 md:h-10',
+      className
+    )}
+    >
       <path
         d="M61.1122 67.5748C61.1345 67.6026 61.1751 67.6071 61.2029 67.5847C65.6813 63.9827 69.2726 59.3999 71.6993 54.1898C74.1352 48.9602 75.332 43.2397 75.1967 37.4732C75.0614 31.7067 73.5977 26.0496 70.9194 20.942C68.2511 15.8535 64.4489 11.447 59.8066 8.06255C59.7778 8.04154 59.7374 8.04792 59.7164 8.07677L58.4695 9.79287C58.4485 9.82172 58.455 9.86211 58.4838 9.88312C62.8461 13.0642 66.419 17.2055 68.9266 21.9875C71.4443 26.7887 72.8202 32.1063 72.9473 37.5268C73.0745 42.9474 71.9495 48.3247 69.6598 53.2405C67.3792 58.1368 64.0044 62.4438 59.7962 65.8293C59.7684 65.8516 59.7639 65.8923 59.7862 65.9201L61.1122 67.5748Z"
         fill="white"
@@ -206,5 +213,6 @@ export default function Logo() {
         </linearGradient>
       </defs>
     </svg>
-  )
-}
+))
+
+export default IntuitionLogotype
