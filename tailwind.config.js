@@ -24,7 +24,7 @@ module.exports = {
         'primary-foreground': 'var(--foreground)',
         destructive: 'var(--error-600)',
         'primary-foreground': 'var(--foreground)',
-        accent: 'var(--primary-600)',
+        accent: 'var(--primary-900)',
         'accent-foreground': 'var(--foreground)',
         input: 'var(--primary-400)',
         'input-foreground': 'var(--foreground)',

@@ -1,5 +1,3 @@
-'use client'
-
 import Header from '@/components/Header'
 import Resources from '@/components/Resources'
 
