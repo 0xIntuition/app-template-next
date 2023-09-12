@@ -1,7 +1,6 @@
 /** @type {import('prettier').Config} **/
 module.exports = {
-  plugins: [
-  ],
+  plugins: [],
   pluginSearchDirs: ['./node_modules'],
   semi: false,
   singleQuote: true,
@@ -10,10 +9,5 @@ module.exports = {
   importOrder: ['^@0xintuition/(.*)$', '^[./]'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
-  importOrderParserPlugins: [
-    'classProperties',
-    'typescript',
-    'jsx',
-    'importAssertions',
-  ],
+  importOrderParserPlugins: ['classProperties', 'typescript', 'jsx', 'importAssertions'],
 }

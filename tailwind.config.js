@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/app/**/*.{ts,tsx}', './src/components/**/*.{ts,tsx}'],
   theme: {
     container: {
       center: true,
@@ -16,7 +16,7 @@ module.exports = {
         transparent: 'var(--transparent)',
         background: 'var(--background)',
         'background-gradient': 'var(--background-gradient)',
-        foreground: 'var(--foreground)',
+        foreground: 'var(--primary-50)',
         link: 'var(--link)',
 
         // ShadCN colors
@@ -26,12 +26,15 @@ module.exports = {
         'primary-foreground': 'var(--foreground)',
         accent: 'var(--primary-900)',
         'accent-foreground': 'var(--foreground)',
-        input: 'var(--primary-400)',
+        input: 'var(--primary-700)',
         'input-foreground': 'var(--foreground)',
-        secondary: 'var(--primary-600)',
+        secondary: 'var(--primary-800)',
         'secondary-foreground': 'var(--foreground)',
         card: 'var(--primary-950)',
         'card-foreground': 'var(--foreground)',
+        border: 'var(--primary-800)',
+        muted: 'var(--primary-800)',
+        'muted-foreground': 'var(--primary-500)',
 
         // Primary colors
         gray: {
@@ -86,22 +89,40 @@ module.exports = {
           900: 'var(--success-900)',
           950: 'var(--success-950)',
         },
+        blue: {
+          50: 'var(--blue-50)',
+          100: 'var(--blue-100)',
+          200: 'var(--blue-200)',
+          300: 'var(--blue-300)',
+          400: 'var(--blue-400)',
+          500: 'var(--blue-500)',
+          600: 'var(--blue-600)',
+          700: 'var(--blue-700)',
+          800: 'var(--blue-800)',
+          900: 'var(--blue-900)',
+          950: 'var(--blue-950)',
+        },
         borderRadius: {
           lg: 'var(--radius)',
           md: 'calc(var(--radius) - 2px)',
           sm: 'calc(var(--radius) - 4px)',
         },
       },
-      borderWidth: {
-        DEFAULT: '0.5px',
-        0: '0',
-        2: '1px',
-        3: '2px',
-        4: '4px',
-        6: '6px',
-        8: '8px',
+      keyframes: {
+        'accordion-down': {
+          from: { height: 0 },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
-    plugins: [require('tailwindcss-animate')],
   },
+  plugins: [require('tailwindcss-animate')],
 }

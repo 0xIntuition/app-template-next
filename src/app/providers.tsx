@@ -4,6 +4,7 @@ import * as React from 'react'
 import { RainbowKitProvider, midnightTheme } from '@rainbow-me/rainbowkit'
 import { WagmiConfig } from 'wagmi'
 import { chains, config } from '../wagmi'
+import AuthGuard from '@/components/AuthGuard'
 import { SessionProvider } from 'next-auth/react'
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -17,7 +18,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           theme={midnightTheme()}
           modalSize={'compact'}
         >
-          {mounted && children}
+          {mounted && <AuthGuard>{children}</AuthGuard>}
         </RainbowKitProvider>
       </WagmiConfig>
     </SessionProvider>

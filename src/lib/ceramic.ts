@@ -1,8 +1,7 @@
+import { randomBytes } from 'crypto'
 import type { RuntimeCompositeDefinition } from '@composedb/types'
-
 import { Cacao, SiweMessage } from '@didtools/cacao'
 import { createDIDKey, DIDSession } from 'did-session'
-import { randomBytes } from 'crypto'
 import { polygonMumbai } from 'wagmi/chains'
 
 // Export this from the client package

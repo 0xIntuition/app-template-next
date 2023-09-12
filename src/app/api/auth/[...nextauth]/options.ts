@@ -1,7 +1,8 @@
-import { definition } from '@/lib/ceramic'
 import { DIDSession } from 'did-session'
 import { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
+
+import { definition } from '@/lib/ceramic'
 
 export const options: NextAuthOptions = {
   providers: [
@@ -11,7 +12,17 @@ export const options: NextAuthOptions = {
         didSession: {
           label: 'didSession',
           type: 'text',
-          placeholder: '0x0',
+          placeholder: '0xuwu',
+        },
+        apikey: {
+          label: 'apikey',
+          type: 'text',
+          placeholder: 'uwu',
+        },
+        wallet: {
+          label: 'wallet',
+          type: 'text',
+          placeholder: '0xuwu',
         },
       },
       async authorize(credentials) {
@@ -42,10 +53,26 @@ export const options: NextAuthOptions = {
             return null
           }
 
+          const resp = await fetch(
+            `http://localhost:8080/apikey/${credentials?.apikey}`,
+            {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+                authorization: `Bearer ${credentials?.didSession}`,
+              },
+            },
+          )
+          if (!resp.ok) {
+            console.error('Invalid API key')
+            return null
+          }
           return {
             id: didSession.did.id,
             didSession: credentials?.didSession,
             did: didSession.did.id,
+            apikey: credentials?.apikey,
+            wallet: credentials?.wallet,
           }
         } catch (e) {
           return null
@@ -58,9 +85,24 @@ export const options: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
+    async jwt({ token, user }: { token: any; user: any }) {
+      if (user) {
+        token.didSession = user.didSession
+        token.did = user.did
+        token.apikey = user.apikey
+        token.id = user.id
+        token.wallet = user.wallet
+      }
+      return token
+    },
     async session({ session, token }: { session: any; token: any }) {
-      session.didSession = token.sub
-      session.did = token.sub
+      if (token) {
+        session.didSession = token.didSession
+        session.did = token.did
+        session.apikey = token.apikey
+        session.id = token.id
+        session.wallet = token.wallet
+      }
       return session
     },
   },
