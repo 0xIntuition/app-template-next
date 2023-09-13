@@ -200,7 +200,7 @@ export default function AuthenticateCard({}: AuthenticateCardProps) {
                       readOnly={!!didSessionString}
                       placeholder="Your Serialized DID Session String"
                       {...field}
-                      className={`${!didSessionString && 'hidden'}`}
+                      className={`${!didSessionString && 'hidden'} font-mono`}
                       endAdornment={
                         didSessionString && (
                           <>
@@ -240,6 +240,7 @@ export default function AuthenticateCard({}: AuthenticateCardProps) {
                         !didSessionString &&
                         !form.formState.errors.serializedDidSession
                       }
+                      className="font-mono"
                       endAdornment={
                         !apikeyString || fieldState.error ? (
                           <TooltipProvider>
