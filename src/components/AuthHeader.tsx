@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { AccountButton } from './AccountButton'
 import IntuitionLogotype from './svg/intuition-logotype'
-import AuthenticateCard from '@/app/authenticate-card'
+import AuthenticateCard from './AuthenticateCard'
 import { useAccount } from 'wagmi'
 
 export default function AuthHeader() {
@@ -14,13 +14,13 @@ export default function AuthHeader() {
           <IntuitionLogotype />
         </Link>
         <p className="rounded-md px-3 py-2 font-mono text-sm cursor-default border border-stone-800/50 bg-gray-50/5 backdrop-blur-sm">
-          Get started by editing{' '}
-          <span className="font-bold text-success-500">src/app/page.tsx</span>
+          Get started by authenticating your{' '}
+          <span className="font-bold text-success-500">DID Session</span> and{' '}
+          <span className="font-bold text-success-500">API Key</span>
         </p>
       </div>
       <div className="flex flex-col items-end max-lg:items-center mt-4 max-lg:justify-center gap-4">
-        <AccountButton />
-        {isConnected && <AuthenticateCard />}
+        <AuthenticateCard />
       </div>
     </div>
   )

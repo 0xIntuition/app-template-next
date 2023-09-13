@@ -7,18 +7,18 @@ export default function Resources() {
   return (
     <div className="grid mb-32 text-center lg:max-w-7xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left gap-12">
       <ResourceCard
-        title="API Client"
-        description="Quick description of API client goes here."
+        title="Documentation"
+        description="Discover the fundamental mechanics of Intuition through our documentation."
         href="#"
       />
       <ResourceCard
-        title="Docs"
-        description="Quick description of docs client goes here."
+        title="Getting Started"
+        description="Use our API to create claims, make attestations, and query knowledge."
         href="#"
       />
       <ResourceCard
-        title="Examples"
-        description="Quick description of examples client goes here."
+        title="Contact Us"
+        description="Need help? Get support from the Intuition team."
         href="#"
       />
     </div>

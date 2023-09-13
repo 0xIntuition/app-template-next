@@ -58,8 +58,6 @@ export const AccountButton = () => {
       {({
         account,
         chain,
-        openAccountModal,
-        openChainModal,
         openConnectModal,
         authenticationStatus,
         mounted,
@@ -115,7 +113,7 @@ export const AccountButton = () => {
                           <Label>DID Session</Label>{' '}
                         </div>
                         <Input
-                          value={defaultSession.serializedDidSession}
+                          value={`Bearer ${defaultSession.serializedDidSession}`}
                           readOnly
                           className="px-0"
                           startAdornment={
