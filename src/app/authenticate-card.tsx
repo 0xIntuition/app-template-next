@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useMemo } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CheckCircle2, HelpCircleIcon } from 'lucide-react'
@@ -186,7 +187,7 @@ export default function AuthenticateCard({}: AuthenticateCardProps) {
                   <Button
                     data-hidden={!!didSessionString}
                     type="button"
-                    variant="secondary"
+                    variant="outline"
                     size="sm"
                     onClick={signMessage}
                     className="block data-[hidden=true]:hidden w-full"

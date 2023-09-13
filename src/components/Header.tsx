@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { AccountButton } from './AccountButton'
 import IntuitionLogotype from './svg/intuition-logotype'
@@ -12,7 +13,7 @@ export default function Header() {
         <Link href="/">
           <IntuitionLogotype />
         </Link>
-        <p className="rounded-md px-3 py-2 font-mono text-sm cursor-default border border-stone-400/50 bg-gray-50/5 backdrop-blur-sm">
+        <p className="rounded-md px-3 py-2 font-mono text-sm cursor-default border border-stone-800/50 bg-gray-50/5 backdrop-blur-sm">
           Get started by editing{' '}
           <span className="font-bold text-success-500">src/app/page.tsx</span>
         </p>

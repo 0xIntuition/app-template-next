@@ -37,7 +37,7 @@ export const ResourceCard = ({
 }: ResourceCardProps) => {
   return (
     <Link href={href}>
-      <Card className="group">
+      <Card className="group h-full">
         <CardHeader className="pb-0">
           <h2
             className={`mb-3 text-xl font-medium text-stone-200 group-hover:text-stone-50 tracking-wider`}
