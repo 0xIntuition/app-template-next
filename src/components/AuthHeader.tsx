@@ -5,7 +5,7 @@ import IntuitionLogotype from './svg/intuition-logotype'
 import AuthenticateCard from '@/app/authenticate-card'
 import { useAccount } from 'wagmi'
 
-export default function Header() {
+export default function AuthHeader() {
   const { isConnected } = useAccount()
   return (
     <div className="max-w-7xl w-full items-start justify-between lg:flex">
