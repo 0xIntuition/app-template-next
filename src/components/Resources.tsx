@@ -19,7 +19,7 @@ export default function Resources() {
       <ResourceCard
         title="Contact Us"
         description="Need help? Get support from the Intuition team."
-        href="#"
+        href="https://discord.gg/0xintuition"
       />
     </div>
   )
