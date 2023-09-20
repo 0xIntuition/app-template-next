@@ -54,7 +54,7 @@ export const options: NextAuthOptions = {
           }
 
           const resp = await fetch(
-            `${process.env.NEXT_API_URL}/apikey/${credentials?.apikey}`,
+            `${process.env.NEXT_PUBLIC_API_URL}/apikey/${credentials?.apikey}`,
             {
               method: 'GET',
               headers: {

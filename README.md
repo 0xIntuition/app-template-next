@@ -61,7 +61,7 @@ pnpm install
 
 - **NEXTAUTH_SECRET**: Required for [next-auth](https://next-auth.js.org/getting-started/introduction). Think of it as your app's secret handshake. Whip one up with `openssl rand -base64 32`. For the curious, here's the [Next-Auth documentation](https://next-auth.js.org/getting-started/example).
 
-- **NEXT_API_URL**: Intuition alpha API url. This is already defaulted to the proper value.
+- **NEXT_PUBLIC_API_URL**: Intuition alpha API url. This is already defaulted to the proper value.
 
 At this point, your `.env.local` file should look something like this:
 
@@ -73,7 +73,7 @@ NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=REPLACE_ME
 NEXTAUTH_URL=http://localhost:3000
 # openssl rand -base64 32
 NEXTAUTH_SECRET=WwrFzRazSs4LjV9XEXymW/XsukYTSWpSCKdiB7MNWr0=
-NEXT_API_URL=http://localhost:8080
+NEXT_PUBLIC_API_URL=http://localhost:8080
 ```
 
 Now you are fully moisturized, in your lane, and ready to dev on Intuition! LFG.

@@ -5,11 +5,11 @@ export async function POST(req: Request) {
   let didSession = body.didSession as string
   let apikey = body.apikey as string
 
-  const res = await fetch(`${process.env.NEXT_API_URL}/apikey/${apikey}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/apikey/${apikey}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      authorization: `Bearer ${didSession}`,
+      Authorization: `${didSession}`,
     },
   })
   if (res.status !== 200) {

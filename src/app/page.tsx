@@ -18,7 +18,7 @@ import Header from '@/components/Header'
 //   const { didSession, apikey } = await requireAuth()
 //   const headers = getAuthHeaders(didSession, apikey)
 
-//   const res = await fetch(`${process.env.NEXT_API_URL}/identities`, {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/identities`, {
 //     method: 'GET',
 //     headers,
 //   })

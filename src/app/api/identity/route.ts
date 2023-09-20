@@ -19,7 +19,7 @@ export async function POST(req: Request) {
   const displayName = body.displayName as string
   const description = body.description as string
 
-  const res = await fetch(`${process.env.NEXT_API_URL}/identity`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/identity`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
