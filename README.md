@@ -98,9 +98,9 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ### Example A: Server-side fetch of identities
 
-Navigate to the protected home page after user authentication (`/src/app/page.tsx`). You'll find a commented-out example showcasing how to fetch identities server-side.
+Navigate to the protected home page after user authentication (`/src/app/page.tsx`). You'll find a commented-out example showcasing how to query identities server-side.
 
-To learn more about identities and how to use them, check out the [Intuition Documentation](TODO: REPLACE ME).
+To learn more about identities and how to use them, check out the [Intuition Documentation](https://app.gitbook.com/o/xYyeoT5KBfRZxYH5NYQb/s/cVc9V0gt0E79kdhQIpdk/how-it-works/primitives/identities).
 
 ### Example B: Client-side creation of a new identity
 
