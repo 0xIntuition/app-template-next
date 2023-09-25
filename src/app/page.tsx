@@ -3,8 +3,8 @@ import Header from '@/components/Header'
 /**
  * Example A: Serverside fetch of identities
  */
-// import { getAuthHeaders } from '@/lib/api'
-// import { requireAuth } from '@/lib/session'
+import { getAuthHeaders } from '@/lib/api'
+import { requireAuth } from '@/lib/session'
 
 /**
  * Example B: Clientside mutation/write
@@ -18,10 +18,14 @@ import Header from '@/components/Header'
 //   const { didSession, apikey } = await requireAuth()
 //   const headers = getAuthHeaders(didSession, apikey)
 
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/identities`, {
-//     method: 'GET',
-//     headers,
-//   })
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_API_URL}/query/identities`,
+//     {
+//       method: 'POST',
+//       headers,
+//       body: JSON.stringify({}),
+//     },
+//   )
 //   const { data: identities } = await res.json()
 //   return { identities }
 // }

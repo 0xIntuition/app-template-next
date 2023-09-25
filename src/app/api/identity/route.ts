@@ -27,8 +27,11 @@ export async function POST(req: Request) {
       'x-api-key': `${apikey}`,
     },
     body: JSON.stringify({
-      displayName: displayName,
+      display_name: displayName,
       description: description,
+      options: {
+        await_existence_check: true, // add polling to await subgraph indexing following on-chain interaction
+      },
     }),
   })
   if (!res.ok) {
