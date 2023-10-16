@@ -29,9 +29,6 @@ export async function POST(req: Request) {
     body: JSON.stringify({
       display_name: displayName,
       description: description,
-      options: {
-        await_existence_check: true, // add polling to await subgraph indexing following on-chain interaction
-      },
     }),
   })
   if (!res.ok) {
