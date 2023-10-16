@@ -3,8 +3,8 @@ import Header from '@/components/Header'
 /**
  * Example A: Serverside fetch of identities
  */
-import { getAuthHeaders } from '@/lib/api'
-import { requireAuth } from '@/lib/session'
+// import { getAuthHeaders } from '@/lib/api'
+// import { requireAuth } from '@/lib/session'
 
 /**
  * Example B: Clientside mutation/write

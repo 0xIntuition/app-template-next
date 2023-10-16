@@ -7,35 +7,16 @@ import { arbitrumGoerli } from 'wagmi/chains'
 // Export this from the client package
 export const definition: RuntimeCompositeDefinition = {
   models: {
-    AtomCreation: {
-      id: 'kjzl6hvfrbw6cb28t1477pp3w1w1lrogvitkksqra4mj6tak7wmcalwihlk1rrk',
-      accountRelation: { type: 'list' },
-    },
-    TripleCreation: {
-      id: 'kjzl6hvfrbw6c91e0ehhg566qp6siivajonwqfxwpk5rzt5irug1dq0s4eu4ejk',
-      accountRelation: { type: 'list' },
-    },
     AtomMetadata: {
-      id: 'kjzl6hvfrbw6c6wg0a5ale41scvzjw8e3t6gf6w8j9a192eijp7r68phuais9de',
+      id: 'kjzl6hvfrbw6c5be464ta8ne35crfj4dbmxirtjrrdbhzmjvf9hlqtulfc2z7de',
+      accountRelation: { type: 'list' },
+    },
+    EasMetadata: {
+      id: 'kjzl6hvfrbw6c6bbvtt3odhuczkfzyfqpm6owxyn9og2s4dn419biarj4zl0cq0',
       accountRelation: { type: 'list' },
     },
   },
   objects: {
-    AtomCreation: {
-      atomID: { type: 'string', required: true },
-      creator: { type: 'string', required: true },
-      vaultID: { type: 'string', required: true },
-      atomIDHash: { type: 'string', required: true },
-      atomWallet: { type: 'string', required: true },
-    },
-    TripleCreation: {
-      object: { type: 'string', required: true },
-      creator: { type: 'string', required: true },
-      subject: { type: 'string', required: true },
-      vaultID: { type: 'string', required: true },
-      predicate: { type: 'string', required: true },
-      tripleHash: { type: 'string', required: true },
-    },
     AtomMetadataImageMetadata: {
       src: { type: 'string', required: true },
       size: { type: 'integer', required: false },
@@ -68,21 +49,30 @@ export const definition: RuntimeCompositeDefinition = {
         refName: 'AtomMetadataImageSources',
         required: false,
       },
-      atomID: { type: 'string', required: false },
+      atomID: { type: 'string', required: true, indexed: true },
       semantic: { type: 'string', required: false },
       corporaID: { type: 'string', required: false },
-      description: { type: 'string', required: true },
-      displayName: { type: 'string', required: true },
+      description: { type: 'string', required: true, indexed: true },
+      displayName: { type: 'string', required: true, indexed: true },
       thumbnailImage: { type: 'string', required: false },
       tripleCreation: { type: 'string', required: false },
       externalReference: { type: 'string', required: false },
     },
+    EasMetadata: {
+      data: { type: 'string', required: false },
+      easId: { type: 'string', required: true, indexed: true },
+      refUID: { type: 'string', required: true },
+      attester: { type: 'string', required: true, indexed: true },
+      recipient: { type: 'string', required: true },
+      revocable: { type: 'boolean', required: true },
+      expirationTime: { type: 'integer', required: true },
+      revocationTime: { type: 'integer', required: true },
+    },
   },
   enums: {},
   accountData: {
-    atomCreationList: { type: 'connection', name: 'AtomCreation' },
-    tripleCreationList: { type: 'connection', name: 'TripleCreation' },
     atomMetadataList: { type: 'connection', name: 'AtomMetadata' },
+    easMetadataList: { type: 'connection', name: 'EasMetadata' },
   },
 }
 
@@ -102,11 +92,8 @@ export async function newDIDSessionFromWalletClient(walletClient: {
     statement: 'I authorize my DID to be used by intuition.systems',
     issuedAt: /* @__PURE__ */ new Date().toISOString(),
     resources: [
-      'ceramic://*?model=kjzl6hvfrbw6c6wg0a5ale41scvzjw8e3t6gf6w8j9a192eijp7r68phuais9de',
-      'ceramic://*?model=kjzl6hvfrbw6c85o2d9z6g3j2r1swpixl1kjixsqulsgeqwc9uzimhgdjk9hn66',
-      'ceramic://*?model=kjzl6hvfrbw6c85o2d9z6g3j2r1swpixl1kjixsqulsgeqwc9uzimhgdjk9hn66',
-      'ceramic://*?model=kjzl6hvfrbw6c91e0ehhg566qp6siivajonwqfxwpk5rzt5irug1dq0s4eu4ejk',
-      'ceramic://*?model=kjzl6hvfrbw6cb28t1477pp3w1w1lrogvitkksqra4mj6tak7wmcalwihlk1rrk',
+      'ceramic://*?model=kjzl6hvfrbw6c5be464ta8ne35crfj4dbmxirtjrrdbhzmjvf9hlqtulfc2z7de',
+      'ceramic://*?model=kjzl6hvfrbw6c6bbvtt3odhuczkfzyfqpm6owxyn9og2s4dn419biarj4zl0cq0',
     ],
   })
   const expiration = new Date(Date.now() + 1000 * 60 * 60 * 24 * 7) // expire in 1 week
