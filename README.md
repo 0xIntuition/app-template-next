@@ -73,7 +73,7 @@ NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=REPLACE_ME
 NEXTAUTH_URL=http://localhost:3000
 # openssl rand -base64 32
 NEXTAUTH_SECRET=WwrFzRazSs4LjV9XEXymW/XsukYTSWpSCKdiB7MNWr0=
-NEXT_PUBLIC_API_URL=http://api.intuition.cafe
+NEXT_PUBLIC_API_URL=https://api.intuition.cafe
 ```
 
 **Note**: Running this locally will result in a mismatch between the url the SIWE is expecting and the url that is being served. This is ok. The SIWE will still work as expected.
